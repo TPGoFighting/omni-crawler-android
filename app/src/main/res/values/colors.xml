@@ -1,0 +1,80 @@
+<resources>
+    <!-- Base Canvas & Card -->
+    <color name="screenshot_canvas">#F7F7F5</color>
+    <color name="screenshot_card_bg">#FFFFFF</color>
+    <color name="screenshot_track_bg">#F1F1EF</color>
+    <color name="notion_canvas">#F7F7F5</color>
+    <color name="notion_bg">#FFFFFF</color>
+    <color name="notion_bg_warm">#F7F7F5</color>
+    <color name="notion_canvas_white">#FFFFFF</color>
+    <color name="notion_track_gray">#F1F1EF</color>
+
+    <!-- Typography -->
+    <color name="screenshot_text_title">#1A1A1A</color>
+    <color name="screenshot_text_body">#37352F</color>
+    <color name="screenshot_text_sub">#787774</color>
+    <color name="screenshot_text_muted">#9B9A97</color>
+    <color name="notion_ink_primary">#37352F</color>
+    <color name="notion_ink_secondary">#787774</color>
+    <color name="notion_ink_muted">#9B9A97</color>
+    <color name="notion_ink_dim">#B7B5B0</color>
+    <color name="notion_text_primary">#37352F</color>
+    <color name="notion_text_secondary">#787774</color>
+    <color name="notion_text_muted">#9B9A97</color>
+
+    <!-- Borders -->
+    <color name="screenshot_border">#EBEBEA</color>
+    <color name="screenshot_border_dark">#D3D3D0</color>
+    <color name="notion_border">#EDEDEB</color>
+    <color name="notion_border_subtle">#EDEDEB</color>
+    <color name="notion_border_medium">#E0E0DE</color>
+    <color name="notion_border_strong">#D3D3D0</color>
+
+    <!-- Brand Buttons -->
+    <color name="screenshot_blue_primary">#2383E2</color>
+    <color name="notion_blue">#2383E2</color>
+    <color name="notion_blue_accent">#2383E2</color>
+    <color name="notion_blue_light">#D3E5EF</color>
+    <color name="notion_blue_text">#183347</color>
+    <color name="notion_green_light">#DBEDDB</color>
+    <color name="notion_green_text">#1C3829</color>
+
+    <!-- Platform Badges (1:1 with Screenshot) -->
+    <color name="badge_github_bg">#F1F1EF</color>
+    <color name="badge_github_text">#1A1A1A</color>
+
+    <color name="badge_wechat_bg">#E7F7ED</color>
+    <color name="badge_wechat_text">#07C160</color>
+
+    <color name="badge_zhihu_bg">#E8F4FD</color>
+    <color name="badge_zhihu_text">#0084FF</color>
+
+    <color name="badge_x_bg">#F1F1EF</color>
+    <color name="badge_x_text">#000000</color>
+
+    <color name="badge_xhs_bg">#FEECEB</color>
+    <color name="badge_xhs_text">#FF2442</color>
+
+    <color name="badge_bili_bg">#FCE8F3</color>
+    <color name="badge_bili_text">#FB7299</color>
+
+    <color name="badge_search_bg">#F3E8FF</color>
+    <color name="badge_search_text">#9333EA</color>
+
+    <color name="badge_cache_bg">#DBEDDB</color>
+    <color name="badge_cache_text">#1C3829</color>
+
+    <color name="notion_badge_green_bg">#DBEDDB</color>
+    <color name="notion_badge_green_text">#1C3829</color>
+    <color name="notion_badge_blue_bg">#D3E5EF</color>
+    <color name="notion_badge_blue_text">#183347</color>
+    <color name="notion_badge_gray_bg">#EAEAE8</color>
+    <color name="notion_badge_gray_text">#37352F</color>
+    <color name="notion_badge_orange_bg">#FADEC9</color>
+    <color name="notion_badge_orange_text">#4D2B11</color>
+    <color name="notion_badge_red_bg">#FFE2DD</color>
+    <color name="notion_badge_red_text">#5D1715</color>
+
+    <color name="notion_item_hover">#EFEFEE</color>
+    <color name="white">#FFFFFF</color>
+</resources>

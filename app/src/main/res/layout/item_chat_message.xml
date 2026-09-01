@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutMsgContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginBottom="10dp">
+
+    <TextView
+        android:id="@+id/tvMsgSender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AI 研报分析师"
+        android:textSize="10.5sp"
+        android:textColor="@color/notion_ink_muted"
+        android:layout_marginBottom="3dp" />
+
+    <TextView
+        android:id="@+id/tvMsgContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxWidth="320dp"
+        android:background="@drawable/bg_notion_property_pill"
+        android:padding="10dp"
+        android:text="回复内容..."
+        android:textSize="13sp"
+        android:textColor="@color/notion_ink_primary"
+        android:lineSpacingExtra="4dp"
+        android:textIsSelectable="true" />
+
+</LinearLayout>

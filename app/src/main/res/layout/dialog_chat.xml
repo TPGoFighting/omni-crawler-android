@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/notion_canvas_white"
+    android:paddingTop="12dp">
+
+    <!-- Notion Sheet Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="交互式深度追问 (In-Context Chat)"
+            android:textSize="14.5sp"
+            android:textStyle="bold"
+            android:textColor="@color/notion_ink_primary" />
+
+        <TextView
+            android:id="@+id/tvChatModelBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_notion_badge_gray"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="2dp"
+            android:text="Gemini 3.7 Flash"
+            android:textSize="10sp"
+            android:textColor="@color/notion_badge_gray_text" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/notion_border_subtle" />
+
+    <!-- Chat Messages List -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerChat"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="12dp"
+        android:clipToPadding="false"
+        android:background="@color/notion_bg_warm" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/notion_border_subtle" />
+
+    <!-- Bottom Input Dock -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="8dp"
+        android:background="@color/notion_canvas_white">
+
+        <EditText
+            android:id="@+id/editChatInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minHeight="38dp"
+            android:background="@drawable/bg_notion_callout_card"
+            android:hint="针对该文章深度追问..."
+            android:textSize="13sp"
+            android:textColor="@color/notion_ink_primary"
+            android:textColorHint="@color/notion_ink_muted"
+            android:paddingHorizontal="10dp"
+            android:maxLines="3" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSendChat"
+            style="@style/Widget.Material3.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:layout_marginStart="6dp"
+            android:text="发送"
+            android:textSize="11.5sp"
+            android:textColor="#FFFFFF"
+            app:backgroundTint="@color/notion_ink_primary"
+            app:cornerRadius="5dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

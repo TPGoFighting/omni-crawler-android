@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/notion_canvas_white"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="历史研报知识库 (SQLite 0ms)"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/notion_ink_primary"
+        android:layout_marginBottom="10dp" />
+
+    <EditText
+        android:id="@+id/editHistorySearch"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:background="@drawable/bg_notion_callout_card"
+        android:hint="搜索标题或正文关键字..."
+        android:textSize="12.5sp"
+        android:textColor="@color/notion_ink_primary"
+        android:textColorHint="@color/notion_ink_muted"
+        android:paddingHorizontal="10dp"
+        android:layout_marginBottom="10dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerHistory"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+</LinearLayout>

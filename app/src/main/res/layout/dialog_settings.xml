@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/notion_bg"
+    android:padding="18dp">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="服务与 API 配置"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/notion_text_primary" />
+
+        <TextView
+            android:id="@+id/tvPingResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_chip_green"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="2dp"
+            android:text="状态待检测"
+            android:textSize="10.5sp"
+            android:textColor="@color/notion_green_text"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <!-- Field 1: Server Base URL -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="后端 API 服务器地址"
+        android:textSize="12sp"
+        android:textColor="@color/notion_text_secondary"
+        android:layout_marginBottom="4dp" />
+
+    <EditText
+        android:id="@+id/editSettingBaseUrl"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/bg_notion_callout"
+        android:hint="https://token.tpgofighting.top"
+        android:textSize="13sp"
+        android:textColor="@color/notion_text_primary"
+        android:paddingHorizontal="10dp"
+        android:inputType="textUri"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Field 2: Feishu OpenID -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="飞书私信接收人 OpenID"
+        android:textSize="12sp"
+        android:textColor="@color/notion_text_secondary"
+        android:layout_marginBottom="4dp" />
+
+    <EditText
+        android:id="@+id/editSettingOpenId"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/bg_notion_callout"
+        android:hint="ou_18b51124eb33d550d9131231fac34797"
+        android:textSize="13sp"
+        android:textColor="@color/notion_text_primary"
+        android:paddingHorizontal="10dp"
+        android:inputType="text"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Field 3: Feishu Webhook (Optional) -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="飞书群 Webhook 机器人 (选填)"
+        android:textSize="12sp"
+        android:textColor="@color/notion_text_secondary"
+        android:layout_marginBottom="4dp" />
+
+    <EditText
+        android:id="@+id/editSettingWebhook"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/bg_notion_callout"
+        android:hint="https://open.feishu.cn/open-apis/bot/v2/hook/..."
+        android:textSize="13sp"
+        android:textColor="@color/notion_text_primary"
+        android:paddingHorizontal="10dp"
+        android:inputType="textUri"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Action Buttons Row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnTestPing"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="6dp"
+            android:text="测试连通性"
+            android:textSize="12sp"
+            android:textColor="@color/notion_text_primary"
+            app:strokeColor="@color/notion_border_strong"
+            app:cornerRadius="6dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnResetDefault"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="0.8"
+            android:layout_marginEnd="6dp"
+            android:text="重置"
+            android:textSize="12sp"
+            android:textColor="@color/notion_text_secondary"
+            app:cornerRadius="6dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSaveSettings"
+            style="@style/Widget.Material3.Button"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1.2"
+            android:text="保存配置"
+            android:textSize="12sp"
+            android:textColor="#FFFFFF"
+            app:backgroundTint="@color/notion_text_primary"
+            app:cornerRadius="6dp" />
+
+    </LinearLayout>
+
+</LinearLayout>
