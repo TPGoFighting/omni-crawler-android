@@ -6,7 +6,7 @@ import android.content.SharedPreferences;
 public class AppConfig {
     private static final String PREF_NAME = "omni_crawler_config";
     public static final String DEFAULT_BASE_URL = "https://token.tpgofighting.top";
-    public static final String DEFAULT_MODEL = "gemini-3.7-flash";
+    public static final String DEFAULT_MODEL = "gemini-3.8-flash";
     public static final String DEFAULT_FEISHU_OPENID = "ou_18b51124eb33d550d9131231fac34797";
 
     private static SharedPreferences getPrefs(Context context) {

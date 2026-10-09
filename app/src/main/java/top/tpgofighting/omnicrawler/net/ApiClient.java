@@ -277,6 +277,35 @@ public class ApiClient {
         }).start();
     }
 
+    public void saveToObsidian(Context context, String articleId, ApiCallback<String> callback) {
+        new Thread(() -> {
+            try {
+                JSONObject json = new JSONObject();
+                json.put("id", articleId);
+                String baseUrl = AppConfig.getBaseUrl(context);
+                RequestBody body = RequestBody.create(json.toString(), JSON_TYPE);
+                Request req = new Request.Builder()
+                        .url(baseUrl + "/crawler-api/save-to-obsidian")
+                        .post(body)
+                        .build();
+
+                try (Response res = client.newCall(req).execute()) {
+                    String respStr = res.body() != null ? res.body().string() : "{}";
+                    JSONObject respJson = new JSONObject(respStr);
+                    if (res.isSuccessful() && respJson.optBoolean("success")) {
+                        String folder = respJson.optString("folderName", "已归档");
+                        mainHandler.post(() -> callback.onSuccess("已存入 Obsidian 飞书收藏: " + folder));
+                    } else {
+                        String err = respJson.optString("error", "归档失败");
+                        mainHandler.post(() -> callback.onError(err));
+                    }
+                }
+            } catch (Exception e) {
+                mainHandler.post(() -> callback.onError("网络异常: " + e.getMessage()));
+            }
+        }).start();
+    }
+
     public void pushFeishu(Context context, String articleId, String title, String url, String platform, String content, String mode, ApiCallback<String> callback) {
         new Thread(() -> {
             try {

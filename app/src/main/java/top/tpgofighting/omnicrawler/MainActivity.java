@@ -92,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
     private String currentDimension = "summary";
 
     private static final String[] MODELS = {
+            "gemini-3.8-flash",
             "gemini-3.7-flash",
             "gemini-3.7-flash-thinking",
             "claude-sonnet-4-5",
@@ -100,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
     };
 
     private static final String[] MODEL_NAMES = {
+            "Gemini 3.8 Flash (最新)",
             "Gemini 3.7 Flash",
             "Gemini 3.7 Thinking",
             "Claude 4.5 Sonnet",
@@ -201,7 +203,7 @@ public class MainActivity extends AppCompatActivity {
         if (pos >= 0 && pos < MODELS.length) {
             return MODELS[pos];
         }
-        return "gemini-3.7-flash";
+        return "gemini-3.8-flash";
     }
 
     private void triggerHaptic(View v) {
@@ -283,7 +285,12 @@ public class MainActivity extends AppCompatActivity {
 
         btnPushFeishu.setOnClickListener(v -> {
             triggerHaptic(v);
-            pushCurrentToFeishu();
+            showExportOptions();
+        });
+        btnPushFeishu.setOnLongClickListener(v -> {
+            triggerHaptic(v);
+            saveCurrentToObsidian();
+            return true;
         });
 
         btnOpenChat.setOnClickListener(v -> {
@@ -521,6 +528,41 @@ public class MainActivity extends AppCompatActivity {
             public void onError(String error) {
                 progressBar.setVisibility(View.GONE);
                 Toast.makeText(MainActivity.this, error, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void showExportOptions() {
+        if (currentArticle == null) return;
+        String[] options = new String[]{"推送到飞书私聊 (1v1)", "归档至 Obsidian 知识库 (飞书收藏)", "复制研报排版"};
+        new androidx.appcompat.app.AlertDialog.Builder(this)
+                .setTitle("知识流转与归档")
+                .setItems(options, (dialog, which) -> {
+                    if (which == 0) {
+                        pushCurrentToFeishu();
+                    } else if (which == 1) {
+                        saveCurrentToObsidian();
+                    } else if (which == 2) {
+                        copyCurrentText();
+                    }
+                })
+                .show();
+    }
+
+    private void saveCurrentToObsidian() {
+        if (currentArticle == null) return;
+        progressBar.setVisibility(View.VISIBLE);
+        ApiClient.getInstance().saveToObsidian(this, currentArticle.id, new ApiClient.ApiCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+                progressBar.setVisibility(View.GONE);
+                Toast.makeText(MainActivity.this, result, Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onError(String error) {
+                progressBar.setVisibility(View.GONE);
+                Toast.makeText(MainActivity.this, "归档失败: " + error, Toast.LENGTH_SHORT).show();
             }
         });
     }
